@@ -17,45 +17,50 @@ function CheckOutForm() {
     const {name, value}= e.target;
     const list= [...inputList];
     list[index][name]= value;
-    setinputList(list);
+    setInputList(list);
 
   }
  
   const handleremove= index=>{
     const list=[...inputList];
     list.splice(index,1);
-    setinputList(list);
+    setInputList(list);
   }
-  }
+
 
   const handleAddList=()=>{
     setInputList([...inputList, {}]);
   }
 
   return (
-    <div className='form col-5'>
+    <div className='form col-lg-4 col-8 '>
         <Image className='image' src="https://sales366.com/storage/2021/09/cropped-Sales-3666-black.png" />
         <Form className=''>
-            <div className='my-3 row'>
-                <Form.Group className='mb-4' controlId="formBasicPassword">
-                    
-                    <Form.Control type="text" name="itemName" placeholder="Enter Item Name" />
-                </Form.Group>
-                <div className='col-6'>
-                    <Form.Group controlId="formBasicEmail">
+              { 
+            inputList.map( (x,i)=>{
+              return(
+                <div className='mb-3 py-3 row'>
+                    <Form.Group className='mb-4' controlId="formBasicPassword">
                         
-                        <Form.Control type="number" name="itemQuantity" placeholder="Enter Item Quantity" />
+                        <Form.Control type="text" name="itemName" placeholder="Enter Item Name" onChange={ e=>handleinputchange(e,i) } />
                     </Form.Group>
+                    <div className='col-6'>
+                        <Form.Group controlId="formBasicEmail">
+                            
+                            <Form.Control type="number" name="itemQuantity" placeholder="Enter Item Quantity" onChange={ e=>handleinputchange(e,i) } />
+                        </Form.Group>
+                    </div>
+                    <div className='col-6'>
+                        <Form.Group controlId="formBasicEmail">
+                            
+                            <Form.Control type="text" name="itemPrice" placeholder="Enter Item Price" onChange={ e=>handleinputchange(e,i) }/>
+                        </Form.Group>
+                    </div>
                 </div>
-                <div className='col-6'>
-                    <Form.Group controlId="formBasicEmail">
-                        
-                        <Form.Control type="text" name="itemPrice" placeholder="Enter Item Price" />
-                    </Form.Group>
-                </div>
-            </div>
+                 );
+             } )}
         </Form>
-        <Button className='col-12 my-2' variant="danger" onClick={() => console.log("Remove")}>
+        <Button className='col-12 my-2' variant="danger" onClick={handleremove}>
             Remove Item from List
         </Button>
         <Button className='col-12' variant="info" onClick={handleAddList}>

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -13,15 +14,93 @@
   }
 }
 
-.App-header {
+.form{
+  background-color: #20232b;
+  padding: 55px 30px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  height: 35rem;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+.form-label {
+  font-size: 15px;
+}
+
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(5px + 2vmin);
+  color: rgb(202, 201, 201);
+}
+
+.form-control{
+  height: 2.8rem;
+  color: #fff;
+  background-color: #2d323b;
+  border: none;
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #282c34;
+  --bs-btn-border-color: #dc3545;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #202329;
+  --bs-btn-hover-border-color: #dc3545;
+  --bs-btn-focus-shadow-rgb: 225,83,97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+}
+
+.btn-info {
+  --bs-btn-color: #c1c1c2;
+  --bs-btn-bg: #282c34;
+  --bs-btn-border-color: #0dcaf0;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #202329;
+  --bs-btn-hover-border-color: #25cff2;
+  --bs-btn-focus-shadow-rgb: 11,172,204;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #3dd5f3;
+  --bs-btn-active-border-color: #25cff2;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #c1c1c2;
+  --bs-btn-disabled-bg: #0dcaf0;
+  --bs-btn-disabled-border-color: #0dcaf0;
+}
+
+
+.btn-primary{
+    --bs-btn-color: #c1c1c2;
+    --bs-btn-bg: #282c34;
+    --bs-btn-border-color: #282c34;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #202329;
+    --bs-btn-hover-border-color: #282c34;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #1d1f22;
+    --bs-btn-active-border-color: #1d1f22;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #1d1f22;
+    --bs-btn-disabled-bg: #c1c1c2;
+    --bs-btn-disabled-border-color: #282c34;
 }
 
 .App-link {
